@@ -59,12 +59,20 @@ getAnsTo3 n = [(a,b)| a<-[-n..n], b<-[-n..n], lf a b == rf a b]
         rf a b = a+b+2
 
 [(x,y) | x <-[1..10], x `mod` 2 ==0 , y<-[1..10], y `mod` 2 /=0]
-module Main where
 
-factorial n = if n == 0 then 1 else n * factorial (n - 1)
+let rightTriangles = [(a, b, c) | c <- [1..10], a <- [1..c], b <- [1..a], a^2 + b^2 == c^2, a + b + c == 24]
+rightTriangles
 
-main = do putStrLn "What is 5! ?"
-          x <- readLn
-          if x == factorial 5
-              then putStrLn "You're right!"
-              else putStrLn "You're wrong!"
+
+# 型変数
+:t fst
+(output) fst :: (a, b) -> a
+
+:t (==)
+(output) (==) :: Eq a => a -> a -> Bool
+#'Eq a =>' は型クラス制約と呼ばれる
+
+
+
+addVectors :: (Double, Double) -> (Double, Double) -> (Double, Double)
+addVectors (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)
