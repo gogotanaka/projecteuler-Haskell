@@ -76,3 +76,32 @@ rightTriangles
 
 addVectors :: (Double, Double) -> (Double, Double) -> (Double, Double)
 addVectors (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)
+
+----------------------------------------
+module Main where
+
+factorial n
+  | n == 0    = 1
+  | otherwise = n * factorial (n - 1)
+
+main = do putStrLn "What is 5! ?"
+          x <- readLn
+          if x == factorial 5
+          then putStrLn "You're right!"
+          else putStrLn "You're wrong!"
+
+----------------------------
+
+main :: IO ()
+main = do  putStrLn "Hello, World!"
+           putStrLn "Hello" >> putStrLn "World"
+
+fbn1 n | n == 1    = 1
+       | n == 2    = 1
+       | otherwise = fbn1(n - 1) + fbn1(n - 2)
+
+
+fbn2 1 = 1
+fbn2 2 = 1
+fbn2 n = fbn2(n - 1) + fbn2(n - 2)
+
