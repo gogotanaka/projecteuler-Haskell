@@ -1,3 +1,4 @@
 main
-main.hi
-main.o
+function_defined_by_pattern_matching
+*.hi
+*.o
